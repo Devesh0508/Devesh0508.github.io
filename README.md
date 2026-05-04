@@ -1,12 +1,21 @@
-# Devesh Ojha — GitHub Pages Redirect
+# Devesh Ojha — Portfolio
 
-This repository hosts **GitHub Pages** for the user site. It instantly forwards to the live portfolio:
+Personal portfolio site for Devesh Ojha, Business & Data Analyst (Calgary, AB).
 
-**https://devesh-ojha-portfolio.b12sites.com/index**
+**Live at:** https://devesh0508.github.io/
 
-## How it works
-- `index.html` uses both JavaScript and a meta refresh to redirect.
-- The `<link rel="canonical">` helps search engines understand the destination.
+## Stack
+- Plain HTML + CSS (no build step, no framework)
+- Hosted on GitHub Pages from the `main` branch
 
-## Update the destination
-Edit `index.html` and replace the `target_url` everywhere with your new site URL, commit, and push.
+## Structure
+- `index.html` — single-page portfolio
+- `Devesh_Ojha_Resume.pdf` — current resume, downloadable from the site
+
+## Update workflow
+1. Edit `index.html` (or replace the resume PDF)
+2. Commit and push to `main`
+3. GitHub Pages auto-deploys within ~1 minute
+
+## Sections
+About · Skills · Experience · Projects · Education · Contact

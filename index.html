@@ -1,20 +1,332 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Redirecting…</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      // >>> CHANGE ONLY THIS LINE <<<
-      const TARGET = "https://devesh-ojha-portfolio.b12sites.com/index";
-      // Instant redirect
-      window.location.replace(TARGET);
-    </script>
-  </head>
-  <body>
-    <p>If you’re not redirected automatically, <a id="link" href="#">click here</a>.</p>
-    <script>
-      document.getElementById('link').href = TARGET;
-    </script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Devesh Ojha — Business & Data Analyst | Calgary, AB</title>
+<meta name="description" content="Devesh Ojha — Business & Data Analyst in Calgary, AB. 3.5 years building Power BI semantic models, T-SQL ETL pipelines, and self-service analytics across Finance, IT, and Operations." />
+<link rel="canonical" href="https://devesh0508.github.io/" />
+<style>
+  :root{
+    --accent:#1F4E79;
+    --accent-soft:#E8EEF5;
+    --ink:#1A1A1A;
+    --muted:#5C6B7A;
+    --line:#E2E6EB;
+    --bg:#FFFFFF;
+    --bg-alt:#FAFBFC;
+    --max:1080px;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);z-index:50;
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .brand{font-weight:700;letter-spacing:.5px;color:var(--ink)}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul a{color:var(--muted);font-size:14px}
+  nav ul a:hover{color:var(--accent);text-decoration:none}
+  @media (max-width:640px){nav ul{display:none}}
+
+  /* HERO */
+  .hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+  .avatar{
+    width:120px;height:120px;border-radius:50%;background:var(--accent);
+    color:#fff;font-size:42px;font-weight:700;display:flex;align-items:center;justify-content:center;
+    letter-spacing:1px;box-shadow:0 6px 18px rgba(31,78,121,.25);
+  }
+  .hero h1{font-size:42px;line-height:1.1;letter-spacing:-.5px}
+  .hero .role{margin-top:8px;color:var(--accent);font-size:18px;font-weight:600}
+  .hero .meta{margin-top:6px;color:var(--muted);font-size:15px}
+  .hero .ctas{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:8px;
+    font-size:14px;font-weight:500;border:1px solid var(--accent);color:var(--accent);background:#fff;
+  }
+  .btn:hover{background:var(--accent);color:#fff;text-decoration:none}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:#163a5c}
+  @media (max-width:640px){
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .avatar{margin:0 auto}
+    .hero h1{font-size:32px}
+    .hero .ctas{justify-content:center}
+  }
+
+  /* SECTIONS */
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:700}
+  h3{font-size:20px;margin-bottom:6px;color:var(--ink)}
+  p{color:#33404D;margin-bottom:12px}
+  .lead{font-size:17px;color:#2C3845;max-width:760px}
+
+  /* SKILLS */
+  .skill-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+  .skill-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .skill-card h4{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:10px}
+  .pill{
+    display:inline-block;background:#fff;border:1px solid var(--line);color:var(--ink);
+    padding:4px 10px;border-radius:14px;font-size:13px;margin:3px 4px 3px 0;
+  }
+
+  /* PROJECTS */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:14px}
+  .project{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+    display:flex;flex-direction:column;gap:10px;transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .project:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.06);border-color:#cdd5de}
+  .project .stack{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+  .project h3{font-size:17px;margin-top:2px}
+  .project .impact{
+    background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;
+    padding:6px 10px;border-radius:6px;display:inline-block;margin-top:auto;
+  }
+  .project .links{margin-top:8px;display:flex;gap:14px;font-size:13px}
+
+  /* EXPERIENCE */
+  .exp{background:var(--bg-alt);border-left:3px solid var(--accent);padding:20px 22px;border-radius:0 var(--radius) var(--radius) 0;margin-top:10px}
+  .exp .top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px}
+  .exp .company{color:var(--muted);font-size:14px}
+  .exp .date{color:var(--muted);font-size:13px;font-weight:500}
+  .exp ul{margin-top:10px;padding-left:18px}
+  .exp li{margin-bottom:6px;color:#33404D;font-size:14.5px}
+  .exp li b{color:var(--ink)}
+
+  /* EDUCATION + CERTS */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px}
+  .edu-grid > div{background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  @media (max-width:640px){.edu-grid{grid-template-columns:1fr}}
+  .edu-grid h3{font-size:16px}
+  .edu-grid .school{color:var(--muted);font-size:14px;margin-top:2px}
+  .edu-grid .when{color:var(--muted);font-size:13px;margin-top:4px}
+  .certs{list-style:none;display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+  .certs li{padding:10px 14px;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;font-size:14px}
+
+  /* CONTACT */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  @media (max-width:640px){.contact{grid-template-columns:1fr}}
+  .contact a{
+    display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--bg-alt);
+    border:1px solid var(--line);border-radius:var(--radius);color:var(--ink);font-weight:500;
+  }
+  .contact a:hover{background:var(--accent-soft);color:var(--accent);text-decoration:none}
+
+  /* FOOTER */
+  footer{padding:24px 0 36px;text-align:center;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">DEVESH OJHA</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="avatar">DO</div>
+    <div>
+      <h1>Devesh Ojha</h1>
+      <div class="role">Business &amp; Data Analyst</div>
+      <div class="meta">Calgary, AB · Legally authorized to work in Canada</div>
+      <div class="ctas">
+        <a class="btn primary" href="mailto:dojha8056@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/devesh-ojha-601068222/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/Devesh0508" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="Devesh_Ojha_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="lead">
+      Business and Data Analyst with 3.5 years delivering <b>Power BI semantic models</b>, <b>T-SQL driven reporting</b>, and <b>data quality frameworks</b> across Finance, IT, and Operations at <b>Cognizant Technology Solutions</b> on the <b>John Deere IT Infrastructure</b> account. Recently completed a Post-Baccalaureate Diploma in Applied Data Science at Thompson Rivers University (Sep 2023 – Sep 2025, full-time), shipping production-grade Python and Power BI projects on Alberta oil &amp; gas regulatory data and HR workforce analytics.
+    </p>
+    <p class="lead">
+      I work the full BA-to-BI loop: requirements elicitation → BRDs and user stories → star-schema modeling → DAX measures → UAT → adoption. I care about making reports trustworthy, fast, and self-service, and I quantify everything I ship.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skill-groups">
+      <div class="skill-card">
+        <h4>Analytics &amp; BI</h4>
+        <span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">Power Query</span>
+        <span class="pill">Star Schema</span><span class="pill">Semantic Modeling</span><span class="pill">Self-Service Analytics</span>
+      </div>
+      <div class="skill-card">
+        <h4>Data Engineering</h4>
+        <span class="pill">T-SQL</span><span class="pill">SQL Server</span><span class="pill">Azure Data Factory</span>
+        <span class="pill">ETL Pipelines</span><span class="pill">Databricks (basic)</span><span class="pill">Data Quality</span><span class="pill">Data Governance</span>
+      </div>
+      <div class="skill-card">
+        <h4>Programming</h4>
+        <span class="pill">Python</span><span class="pill">pandas</span><span class="pill">NumPy</span>
+        <span class="pill">openpyxl</span><span class="pill">Streamlit</span>
+      </div>
+      <div class="skill-card">
+        <h4>Business Analysis</h4>
+        <span class="pill">Requirements Elicitation</span><span class="pill">BRDs</span><span class="pill">User Stories</span>
+        <span class="pill">Gap Analysis</span><span class="pill">Process Mapping</span><span class="pill">UAT</span>
+        <span class="pill">Change Management</span><span class="pill">KPI Definition</span>
+      </div>
+      <div class="skill-card">
+        <h4>Tools &amp; Platforms</h4>
+        <span class="pill">JIRA</span><span class="pill">Confluence</span><span class="pill">Salesforce CRM</span>
+        <span class="pill">Power Automate</span><span class="pill">Advanced Excel</span><span class="pill">Agile / Scrum</span>
+      </div>
+      <div class="skill-card">
+        <h4>Domain</h4>
+        <span class="pill">Oil &amp; Gas (Alberta)</span><span class="pill">Finance &amp; Operations</span>
+        <span class="pill">IT Infrastructure</span><span class="pill">HR Analytics</span><span class="pill">Compliance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="exp">
+      <div class="top">
+        <div>
+          <h3>Business Analyst</h3>
+          <div class="company">Cognizant Technology Solutions · Client: John Deere IT Infrastructure</div>
+        </div>
+        <div class="date">Jan 2020 — Jul 2023</div>
+      </div>
+      <ul>
+        <li>Built <b>Power BI semantic layer</b> (star schema, DAX, Power Query) for 8 Finance/Ops/IT stakeholders; cut <b>3-day manual reconciliation to 4 hours</b>, giving C-level visibility into <b>$50M+</b> in operational metrics.</li>
+        <li>Engineered <b>T-SQL ETL pipelines</b> in Azure Data Factory ingesting <b>70K+ records per cycle</b> for 4 teams; eliminated <b>80–150 hours/month</b> of manual processing and freed 2 FTEs for higher-value analysis.</li>
+        <li>Diagnosed <b>T-SQL aggregation defect</b> distorting <b>$50M+ investment reporting</b>; redesigned with window functions and CTEs, restoring data accuracy and reducing metric variance <b>50%</b> within 30 days.</li>
+        <li>Designed <b>12-rule data quality framework</b> for HR workforce reporting (5 sources, <b>15% error rate</b>); coordinated Python automation achieving <b>100% accuracy</b> and projecting <b>600+ hours/year saved</b>.</li>
+        <li>Authored <b>BRDs, user stories, training materials, and UAT scripts</b> across 6 concurrent Agile projects; reduced post-deployment defects <b>40%</b> and accelerated adoption <b>2 sprint cycles</b> per release.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="project">
+        <div class="stack">Python · Power BI · AER ST39</div>
+        <h3>Alberta Oil Sands Production Analytics</h3>
+        <p>Engineered a Python ETL pipeline normalizing <b>12,084 unstructured AER ST39 PDFs</b> across 3 years and 9 operators; built Power BI dashboards with trend analysis and competitor benchmarking.</p>
+        <span class="impact">90% manual research reduced · Identified Gibson Energy as fastest-growing operator (+15.5%)</span>
+        <div class="links">
+          <a href="https://github.com/Devesh0508/Alberta_Oil_Sands_Analysis" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="stack">Python · Streamlit · pandas</div>
+        <h3>HR Analytics Automation Pipeline</h3>
+        <p>End-to-end Python automation pipeline with <b>12 enterprise validation rules</b>, 3 engineered features for demographic and attrition analysis, and a Streamlit drag-and-drop interface for HR leadership.</p>
+        <span class="impact">12 hours → 90 seconds (480x) · 0% error rate · 600+ hours/year saved</span>
+        <div class="links">
+          <a href="https://github.com/Devesh0508/Python-Pipeline-for-Excel-Automation" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="stack">Deep Learning · VGG19 · Python</div>
+        <h3>Pediatric Pneumonia Detection</h3>
+        <p>Transfer learning approach using <b>VGG19</b> for chest X-ray classification, demonstrating production-style deep learning workflow on medical imaging data.</p>
+        <span class="impact">Practical CNN application on a sensitive medical-imaging dataset</span>
+        <div class="links">
+          <a href="https://github.com/Devesh0508/Pediatric-Pneumonia-Detection" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="stack">Machine Learning · Jupyter</div>
+        <h3>Space Object Classification</h3>
+        <p>Multi-class classification of space objects using supervised ML methods; feature engineering, model comparison, and evaluation across multiple classifiers.</p>
+        <span class="impact">Hands-on ML pipeline from EDA through model selection</span>
+        <div class="links">
+          <a href="https://github.com/Devesh0508/Space-Object-Classification" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education &amp; Certifications</h2>
+    <div class="edu-grid">
+      <div>
+        <h3>Post-Baccalaureate Diploma in Applied Data Science</h3>
+        <div class="school">Thompson Rivers University · Kamloops, BC</div>
+        <div class="when">Sep 2023 — Sep 2025 · Full-time</div>
+      </div>
+      <div>
+        <h3>Bachelor of Technology — Electronics &amp; Instrumentation Engineering</h3>
+        <div class="school">MAKAUT · West Bengal, India</div>
+        <div class="when">Aug 2015 — Oct 2019</div>
+      </div>
+    </div>
+    <ul class="certs">
+      <li><b>Power BI Data Analytics</b> — Simplilearn · 2025</li>
+      <li><b>Modernizing Data Lakes and Data Warehouses with Google Cloud</b> — Coursera · 2025</li>
+      <li><b>Microsoft Azure AI Fundamentals (AI-900)</b> — Microsoft · 2020</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="lead">Open to Business Analyst, Data Analyst, BI Analyst, and Business Systems Analyst roles in Calgary and across Canada (remote welcome). Best way to reach me is email or LinkedIn.</p>
+    <div class="contact">
+      <a href="mailto:dojha8056@gmail.com">📧 dojha8056@gmail.com</a>
+      <a href="https://www.linkedin.com/in/devesh-ojha-601068222/" target="_blank" rel="noopener">💼 linkedin.com/in/devesh-ojha-601068222</a>
+      <a href="https://github.com/Devesh0508" target="_blank" rel="noopener">🐙 github.com/Devesh0508</a>
+      <a href="Devesh_Ojha_Resume.pdf" target="_blank" rel="noopener">📄 Download my resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Devesh Ojha · Built with HTML &amp; CSS · Hosted on GitHub Pages
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
 </html>
