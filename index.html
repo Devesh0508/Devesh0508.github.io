@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Devesh Ojha — Data &amp; AI Engineer | Calgary, AB</title>
-<meta name="description" content="Devesh Ojha — Data &amp; AI Engineer in Calgary, AB. I build the whole path: ingestion, modelling, and the product on top. Live production systems, regulator-scale ETL, and ML you can interrogate." />
+<title>Devesh Ojha — AI &amp; Data Engineer | Calgary, AB</title>
+<meta name="description" content="Devesh Ojha — AI &amp; Data Engineer in Calgary, AB. I build models and the data infrastructure they depend on. Live production systems, regulator-scale ETL, and ML you can interrogate in the browser." />
 <link rel="canonical" href="https://devesh0508.github.io/" />
-<meta property="og:title" content="Devesh Ojha — Data &amp; AI Engineer" />
-<meta property="og:description" content="I build the whole path: ingestion, modelling, and the product on top. Calgary, AB." />
+<meta property="og:title" content="Devesh Ojha — AI &amp; Data Engineer" />
+<meta property="og:description" content="I build models and the data infrastructure they depend on. Calgary, AB." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://devesh0508.github.io/" />
 <meta name="theme-color" content="#0B1220" />
@@ -185,8 +185,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
   <div class="hero-top">
   <div>
   <h1>Devesh Ojha</h1>
-  <div class="role">Data &amp; AI Engineer</div>
-  <p class="lede">I build the whole path — <b>ingestion, modelling, and the product that sits on top.</b> Four years turning enterprise operational data into systems teams ran their week on; now shipping full-stack, ML-backed products end to end.</p>
+  <div class="role">AI &amp; Data Engineer</div>
+  <p class="lede">I build models — and <b>the data infrastructure they depend on.</b> The part most models never survive. Four years inside enterprise operational data, then two building ML systems and full-stack products end to end.</p>
   <p class="loc">Calgary, AB · authorised to work in Canada · available immediately</p>
 
   <div class="cta">
@@ -230,7 +230,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
   <div class="wrap">
     <div class="eyebrow">Selected work</div>
     <h2 class="sec-title">Things that run, not things that ran once</h2>
-    <p class="sec-sub">Most portfolios stop at the notebook. These go to the part where somebody else depends on the output.</p>
+    <p class="sec-sub">A model is the easy half. What decides whether it survives contact with reality is everything to its left and right — where the data comes from, whether you can trust it, and what metric you actually optimise.</p>
 
     <div class="feature">
       <span class="tag">Live in production</span>
@@ -264,6 +264,28 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
 
     <div class="grid">
       <div class="card">
+        <div class="kicker">scikit-learn · imbalanced-learn</div>
+        <h3>Space Object Classification</h3>
+        <p>Debris massively outnumbers rocket bodies, so a model that always guesses "debris" scores well and is useless. <b>Class imbalance was the whole problem.</b> The jump from linear SVM to RBF says the boundary in orbital-element space is genuinely non-linear.</p>
+        <div class="chips">
+          <span class="chip hi">97.4% Random Forest</span>
+          <span class="chip">SMOTE to 8,431/class</span>
+          <span class="chip">Per-class metrics</span>
+        </div>
+        <div class="links"><a href="https://github.com/Devesh0508/Space-Object-Classification" target="_blank" rel="noopener">Read the build →</a></div>
+      </div>
+      <div class="card">
+        <div class="kicker">TensorFlow · Keras · VGG19</div>
+        <h3>Pediatric Pneumonia Detection</h3>
+        <p>Triage support for chest radiographs, where <b>a false negative costs far more than a false alarm.</b> VGG19 transfer learning with augmentation and regularisation tuned for a small, imbalanced clinical dataset — recall is the objective, not accuracy.</p>
+        <div class="chips">
+          <span class="chip hi">~88% accuracy</span>
+          <span class="chip">Augmentation + BatchNorm</span>
+          <span class="chip">EarlyStopping</span>
+        </div>
+        <div class="links"><a href="https://github.com/Devesh0508/Pediatric-Pneumonia-Detection" target="_blank" rel="noopener">Read the build →</a></div>
+      </div>
+      <div class="card">
         <div class="kicker">Python · pandas · Power BI</div>
         <h3>Alberta Oil Sands Production Analysis</h3>
         <p>Alberta's regulator publishes ST39 as a document, not a dataset: months run across the page, commodities stack down it. <b>Unpivoting three annual workbooks into one tidy fact table</b> — 9 operators, 36 months, 251 monthly series — is what turns every downstream measure into a one-line aggregation.</p>
@@ -274,7 +296,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
         </div>
         <div class="links"><a href="https://github.com/Devesh0508/Alberta_Oil_Sands_Analysis" target="_blank" rel="noopener">Read the build →</a><a href="#data">See the data ↓</a></div>
       </div>
-
       <div class="card">
         <div class="kicker">Python · pandas · Streamlit</div>
         <h3>HR Analytics Automation Pipeline</h3>
@@ -287,29 +308,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
         <div class="links"><a href="https://github.com/Devesh0508/Python-Pipeline-for-Excel-Automation" target="_blank" rel="noopener">Read the build →</a></div>
       </div>
 
-      <div class="card">
-        <div class="kicker">scikit-learn · imbalanced-learn</div>
-        <h3>Space Object Classification</h3>
-        <p>Debris massively outnumbers rocket bodies, so a model that always guesses "debris" scores well and is useless. <b>Class imbalance was the whole problem.</b> The jump from linear SVM to RBF says the boundary in orbital-element space is genuinely non-linear.</p>
-        <div class="chips">
-          <span class="chip hi">97.4% Random Forest</span>
-          <span class="chip">SMOTE to 8,431/class</span>
-          <span class="chip">Per-class metrics</span>
-        </div>
-        <div class="links"><a href="https://github.com/Devesh0508/Space-Object-Classification" target="_blank" rel="noopener">Read the build →</a></div>
-      </div>
 
-      <div class="card">
-        <div class="kicker">TensorFlow · Keras · VGG19</div>
-        <h3>Pediatric Pneumonia Detection</h3>
-        <p>Triage support for chest radiographs, where <b>a false negative costs far more than a false alarm.</b> VGG19 transfer learning with augmentation and regularisation tuned for a small, imbalanced clinical dataset — recall is the objective, not accuracy.</p>
-        <div class="chips">
-          <span class="chip hi">~88% accuracy</span>
-          <span class="chip">Augmentation + BatchNorm</span>
-          <span class="chip">EarlyStopping</span>
-        </div>
-        <div class="links"><a href="https://github.com/Devesh0508/Pediatric-Pneumonia-Detection" target="_blank" rel="noopener">Read the build →</a></div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -429,7 +429,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Let's talk</h2>
-    <p>Open to Data Engineer, AI/ML Engineer, BI and Senior Analyst roles across Canada. Calgary-based, authorised to work here, available immediately.</p>
+    <p>Open to AI/ML Engineer, Data Engineer and Senior Analyst roles across Canada. Calgary-based, authorised to work here, available immediately.</p>
     <div class="cta">
       <a class="btn btn-1" href="mailto:dojha8056@gmail.com">dojha8056@gmail.com</a>
       <a class="btn btn-2" href="https://linkedin.com/in/devesh-ojha-601068222" target="_blank" rel="noopener">LinkedIn</a>
