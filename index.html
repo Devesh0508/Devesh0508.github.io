@@ -55,12 +55,26 @@ nav ul a:hover{color:var(--ink)}
 
 /* HERO */
 .hero{padding:92px 0 72px;border-top:none}
+.hero-top{display:grid;grid-template-columns:1fr auto;gap:52px;align-items:center;margin-bottom:54px}
+.portrait{position:relative;flex-shrink:0}
+.portrait img{width:280px;height:280px;object-fit:cover;border-radius:22px;display:block;border:1px solid var(--line-2)}
+.portrait::before{content:"";position:absolute;inset:-14px;border-radius:32px;background:linear-gradient(150deg,rgba(52,211,153,.30),rgba(79,156,249,.22),transparent 70%);filter:blur(20px);z-index:-1}
+.portrait figcaption{position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);white-space:nowrap;
+  font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  background:#0d1727;border:1px solid var(--line-2);border-radius:999px;padding:8px 14px}
+.portrait figcaption i{font-style:normal;color:var(--green)}
+@media(max-width:900px){
+  .hero-top{grid-template-columns:1fr;gap:36px}
+  .portrait{order:-1;justify-self:start}
+  .portrait img{width:150px;height:150px;border-radius:18px}
+  .portrait figcaption{display:none}
+}
 .hero h1{font-size:clamp(40px,7vw,68px);font-weight:800;margin-bottom:6px}
 .role{font-size:clamp(17px,2.4vw,22px);font-weight:600;color:var(--green);margin-bottom:22px;letter-spacing:-.01em}
 .lede{font-size:clamp(17px,2.2vw,21px);color:var(--ink-2);max-width:60ch;margin-bottom:12px}
 .lede b{color:var(--ink);font-weight:600}
 .loc{font:500 14px/1.6 var(--mono);color:var(--faint);margin-bottom:30px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:54px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;transition:.16s;border:1px solid transparent}
 .btn-1{background:var(--green);color:#06241a}
 .btn-1:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(52,211,153,.24)}
@@ -168,6 +182,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
 </nav>
 
 <header class="wrap hero" id="top">
+  <div class="hero-top">
+  <div>
   <h1>Devesh Ojha</h1>
   <div class="role">Data &amp; AI Engineer</div>
   <p class="lede">I build the whole path — <b>ingestion, modelling, and the product that sits on top.</b> Four years turning enterprise operational data into systems teams ran their week on; now shipping full-stack, ML-backed products end to end.</p>
@@ -177,6 +193,13 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
     <a class="btn btn-1" href="https://cheaperrx.vercel.app" target="_blank" rel="noopener">Open CheaperRx — live →</a>
     <a class="btn btn-2" href="#data">Play with real regulator data</a>
     <a class="btn btn-2" href="Devesh_Ojha_Resume.pdf">Résumé (PDF)</a>
+  </div>
+  </div>
+
+  <figure class="portrait">
+    <img src="devesh.jpg" alt="Portrait of Devesh Ojha" width="280" height="280" loading="eager" />
+    <figcaption><i>&#9679;</i>&nbsp; Open to work</figcaption>
+  </figure>
   </div>
 
   <div class="kpis">
